@@ -1,9 +1,215 @@
 <html>
 <head>
-	<title>Mars Rover Kata!</title>
+	<title>Brad's Mars Rover Kata!</title>
 	<script type="text/javascript" src="rover.js"></script>
+	<script src="javascript.js"></script>
+	<style type="text/css">
+		* {
+			border: red 1px solid;
+		}
+		body {
+			background-image: url("img/Mars Background.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		div#grid-container {
+			background: #CCC;
+			border: #999 1px solid;
+			width: 540px;
+			height: 540px;
+			margin: 0px auto;
+		}
+		.direction-display {
+			text-align: center;
+			font-size: 25px;
+			font-weight: bold;
+			color: white;
+		}
+		span {
+			color: green;
+			background-color: white;
+			border: 1px solid black;
+		}
+		div#grid-container > div {
+			border: #000 1px solid;
+			width: 50px;
+			height: 50px;
+			float: left;
+			margin: 1px;
+			text-align: center;
+		}
+		h1 {
+			text-align: center;
+		}
+		div.input-container {
+			padding-top: 15px;
+			text-align: center;
+		}
+		#input-box {
+			display: inline;
+			width: 300px;
+			height: 30px;
+			border: 1px solid black;
+			margin: 0 auto;
+			font-size: 20px;
+		}
+		#go {
+			width: auto;
+			height: auto;
+			font-size: 20px;
+			font-weight: bold;
+			border-radius: 5px;
+			margin: 0 auto;
+		}
+		#clear-command {
+			width: auto;
+			height: auto;
+			font-size: 20px;
+			border-radius: 5px;
+			margin: 0 auto;
+		}
+		h1#bottom-text {
+			font-size: 25px;
+			text-decoration: underline;
+			color: white;
+		}
+		div.command-buttons {
+			text-align: center;
+		}
+		#forward {
+			font-size: 20px;
+			border-radius: 5px;
+		}
+		#backward {
+			font-size: 20px;
+			border-radius: 5px;
+		}
+		#left {
+			font-size: 20px;
+			border-radius: 5px;
+		}
+		#right {
+			font-size: 20px;
+			border-radius: 5px;
+		}
+	</style>
 </head>
 <body>
-
+<h1>Brad's Mars Rover</h1>
+	<div id="grid-container">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div><img src="img/Brad Rover.png" style="width:100%; height:100%"></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+		<div class="direction-display">DIRECTION: <span>N</span></div>
+		<div class="input-container">
+			<input id="input-box" type="text" value="ffff" readonly>
+			<button id="go">GO ROVER!</button>
+			<button id="clear-command">CLEAR commands</button>
+		</div>
+	<h1 id="bottom-text">Please choose from command list below, then click "GO ROVER!"</h1>
+	<div class="command-buttons">
+		<button id="forward">FORWARD</button>
+		<button id="backward">BACKWARD</button>
+		<button id="left">LEFT</button>
+		<button id="right">RIGHT</button>
+	</div>
 </body>
 </html>
