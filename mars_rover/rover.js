@@ -75,13 +75,94 @@ function goRight(rover) {
 console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
 
+// function commandArray() {
+//   var splitCommands = $("#input-box").html();
+//   console.log(splitCommands);
+//
+// }
 goForward(myRover);
-goBackward(myRover);
-goBackward(myRover);
+goForward(myRover);
+// commandArray();
 
 // JQUERY
 $(document).ready(function() {
+
 $("#forward").click(function() {
-  $("#input-box:text").val("f");
+  $("#input-box").append("F");
+  });
+$("#backward").click(function() {
+  $("#input-box").append("B");
+  });
+$("#left").click(function() {
+  $("#input-box").append("L");
+  });
+$("#right").click(function() {
+  $("#input-box").append("R");
+  });
+$("#clear-command").click(function() {
+  $("#input-box").text("");
+  });
+$("button").hover(function() {
+  $(this).css("background","#605c5b");
+}, function() {$(this).css("background","");
+  });
+// JQUERY FUNCTIONS
+var defaultRow = 9;
+var defaultColumn = 0;
+var currentRow, currentColumn;
+
+function moveUp() {
+  $("#rover").animate({bottom: '+=40px'},'fast');
+}
+function moveDown() {
+  $("#rover").animate({top: '+=40px'}, 'fast');
+}
+function moveLeft() {
+  $("#rover").animate({left: '-=40px'},'fast');
+}
+function moveRight() {
+  $("#rover").animate({right: '-=40px'},'fast');
+}
+$("#go").click(function() {
+  var commandString = $("#input-box").html();
+  var commandArray = commandString.split("");
+  console.log(commandArray);
+  console.log(commandArray.length);
+  console.log(myRover.direction);
+  for (i=0; i<commandArray.length;i++) {
+    console.log(commandArray[i]);
+    if (commandArray[i]=="B") {
+      switch (myRover.direction) {
+        case 'N':
+          moveDown();
+          break;
+        case 'E':
+          moveLeft();
+          break;
+        case 'S':
+          moveUp();
+          break;
+        case 'W':
+          moveRight();
+          break;
+      };
+    }
+    if (commandArray[i]=="F") {
+      switch (myRover.direction) {
+        case 'N':
+          moveUp();
+          break;
+        case 'E':
+          moveRight();
+          break;
+        case 'S':
+          moveDown();
+          break;
+        case 'W':
+          moveLeft();
+          break;
+      };
+    }
+  }
+  });
 });
-})
