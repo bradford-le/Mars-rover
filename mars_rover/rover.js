@@ -123,6 +123,7 @@ function moveLeft() {
 function moveRight() {
   $("#rover").animate({right: '-=40px'},'fast');
 }
+
 $("#go").click(function() {
   var commandString = $("#input-box").html();
   var commandArray = commandString.split("");
@@ -131,6 +132,7 @@ $("#go").click(function() {
   console.log(myRover.direction);
   for (i=0; i<commandArray.length;i++) {
     console.log(commandArray[i]);
+    debugger;
     if (commandArray[i]=="B") {
       switch (myRover.direction) {
         case 'N':
